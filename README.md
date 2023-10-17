@@ -23,16 +23,6 @@ CTRL - C to get out of it.
 
 npm run build
 
-## step 2. Parcel
-
-npm install -D parcel
-
-npx parcel ./index.html
-
-note that i had to remove the DIST folder first and the favicon link from the html
-
-## step 3. Turning the index.html into something i like and adding some SASS files.
-
-i've already coded some stuff so im going to move stuff over.
+# hey explain how vue works thanks
 
 
