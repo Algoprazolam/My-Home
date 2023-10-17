@@ -1,7 +1,8 @@
 {
   "devDependencies": {
     "@parcel/transformer-sass": "^2.10.0",
-    "parcel": "^2.10.0"
+    "parcel": "^2.10.0",
+    "vue": "^3.3.4"
   },
   "scripts": {
     "start": "npx parcel ssc/index.html"
