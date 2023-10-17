@@ -9,3 +9,8 @@ build: npx parcel ssc/index.html
 or
 "start": "npx parcel ssc/index.html"
 npm run start // npm start
+
+
+remove dist from ignore and 
+git subtree push --prefix dist origin gh-pages 
+after building it
