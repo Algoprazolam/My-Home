@@ -1,3 +1,42 @@
+<script>
+export default {
+data() {
+        return {
+            mainNavItems: [
+                {text: 'Vue item 1'},
+                {text: 'Vue item 2'},
+                {text: 'Vue item 3'},
+                {text: 'Vue item 4'},
+                {text: 'Vue item 5'}
+            ]
+        }
+        
+    }
+}
+</script>
+
+<template>
+   
+   <header class="header">
+        <div class="logoContainer">
+            <a href="#">
+                <img src="../assets/images/logo.png" alt="image of a girl walking her dog">
+            </a>
+        </div>
+        <nav class="mainNav">
+            <input type="checkbox"  class="toggleMenu">
+            <div class="hamburger"></div>
+            <ul class="menu">
+                <li v-for="mainNavItem in mainNavItems">
+                    <a href='#'>{{ mainNavItem.text }}</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+</template>
+
+<style> 
 .header {
     position: relative;
     width: 100%;
@@ -11,12 +50,14 @@
 
 .logoContainer a {
     display: block;
-    img {
-      display: block;
-      height: 100px;
-      width: 100%;
-    }
 }
+  
+  .logoContainer a img{
+    display: block;
+    height: 100px;
+    width: 100%;
+
+  }
   
   .mainNav {
     display: flex;
@@ -31,26 +72,29 @@
     align-items: center;
     z-index: 1;
     transition: 0.5s;
-    li {
-      list-style-type: none;
-      a{
-        color: #Fdd;
-        text-decoration: none;
-        display: block;
-        padding: 40px 25px;
-        font-size: 18px;
-        line-height: 1;
-        transition: 0.3s;
-        &:hover {
-          box-shadow: 0 -5px 0px #fdd inset, 
-          500px 0 0 rgba(0, 0, 0, 0.2) inset;
-          border-radius: 10px;
-          padding: 35px 25px 45px 25px;
-        }
-      }
-    }
   }
   
+  .menu li {
+    list-style-type: none;
+  }
+
+  .menu li a {
+    color: #Fdd;
+    text-decoration: none;
+    display: block;
+    padding: 40px 25px;
+    font-size: 18px;
+    line-height: 1;
+    transition: 0.3s;
+  }
+
+  .menu li a:hover {
+    box-shadow: 0 -5px 0px #fdd inset, 
+    500px 0 0 rgba(0, 0, 0, 0.2) inset;
+    border-radius: 10px;
+    padding: 35px 25px 45px 25px;
+  }
+
   .hamburger {
     position: relative;
     width: 30px;
@@ -60,23 +104,27 @@
     cursor: pointer;
     z-index: 2;
     transition: 0.3s;
-    &:before {
-      top: -10px ;
-      width: 20px;
-    }
-    &:after {
-      top: 10px ;
-      width: 25px;
-    }
-    &:before,&:after {
-      content: '';
-      position: absolute;
-      height: 4px;
-      right: 0;
-      background-color: white;
-      border-radius: 10px;
-    }
-    }
+  }
+
+  .hamburger:before,
+  .hamburger:after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    right: 0;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .hamburger:before {
+    top: -10px ;
+    width: 20px;
+  }
+
+  .hamburger:after {
+    top: 10px ;
+    width: 25px;
+  }
 
   .toggleMenu {
     position: absolute;
@@ -146,3 +194,4 @@
       border-radius: 10px;
     }
   }
+</style>
