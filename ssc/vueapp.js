@@ -1,4 +1,5 @@
 const app = Vue.createApp({
+    let id = 0;
     data() {
         return {
             mainNavItems: [
