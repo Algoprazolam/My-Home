@@ -105,10 +105,62 @@ body {
   }
   .hamburger, 
   .toggleMenu {
-    /* display: none; */
+    display: none;
   }
   
   .mainNav input:checked ~ .hamburger {
     background-color: transparent;
 
+  }
+
+  .mainNav input:checked ~ .hamburger:before {
+    top: 0;
+    transform:  rotate(-45deg);
+    width: 30px;
+
+  }
+
+  .mainNav input:checked ~ .hamburger:after {
+    top: 0;
+    transform:  rotate(45deg);
+    width: 30px;
+  }
+
+  .mainNav input:checked ~ .menu {
+    right: 0;
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
+  }
+
+  @media screen and (max-width: 992px){
+
+    .hamburger, 
+    .toggleMenu {
+      display: block;
+    }
+    .header{
+      padding: 10px 20px;
+    }
+    .menu {
+      justify-content: start;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      right: -300px;
+      background-color: red;
+      width: 300px;
+      height: 100%;
+      padding-top: 120px;
+    }
+
+    .menu li {
+      width: 100%;
+    }
+
+    .menu li a,
+    .menu li a:hover {
+      padding: 30px;
+      font-size: 24px;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+    }
   }
