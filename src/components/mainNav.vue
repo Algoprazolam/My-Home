@@ -20,7 +20,7 @@ data() {
    <header class="header">
         <div class="logoContainer">
             <a href="#">
-                <img src="../assets/images/logo.png" alt="image of a girl walking her dog">
+                <img src="../assets/images/logo.webp" alt="image of a girl walking her dog">
             </a>
         </div>
         <nav class="mainNav">
@@ -46,6 +46,7 @@ data() {
     background-color: #90302c;
     padding: 0 25px;
     transition: 0.3s;
+    box-shadow: 0px 0px 5px 5px #90302c;
 }
 
 .logoContainer a {
@@ -191,7 +192,7 @@ data() {
       padding: 30px;
       font-size: 24px;
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
-      border-radius: 10px;
+      border-radius: 5px;
     }
   }
 </style>
