@@ -12,7 +12,7 @@ data() {
 <template>
     <div class="contentContainer">
         <div class="contentItem item1"><a href="https://www.instagram.com/she.just.she/" target="_blank"><img src="../assets/images/instagram.png" alt="instagram logo"></a></div>
-        <div class="contentItem item2"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, eius? </p></div>
+        <div class="contentItem item2"><a href="https://github.com/Algoprazolam/" target="_blank"><img src="../assets/images/github.svg" alt="github logo"></a></div>
         <div class="contentItem item3"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, eius? </p></div>
         <div class="contentItem item4"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, eius? </p></div>
         <div class="contentItem item5"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, eius? </p></div>
@@ -51,7 +51,7 @@ data() {
         text-align: center;
     }
     .contentItem img {
-        width: 100px;
-        height: 100px;
+        width: auto;
+        height: 200px;
     }
 </style>
