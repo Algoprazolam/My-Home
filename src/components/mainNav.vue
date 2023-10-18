@@ -1,4 +1,5 @@
 <script>
+
 export default {
 data() {
         return {
@@ -9,9 +10,15 @@ data() {
                 {text: 'Vue item 4'},
                 {text: 'Vue item 5'}
             ],
-            houseColor: '#90302c'
+            houseColor: '#90302c',
+            hamburgerState: false
         }
         
+    },
+    methods: {
+      showNavToggle() {
+        this.hamburgerState = !this.hamburgerState
+      }
     }
 }
 </script>
@@ -24,8 +31,12 @@ data() {
                 <img src="../assets/images/logo.jpg" alt="image of a girl walking her dog">
             </a>
         </div>
-        <nav class="mainNav">
-            <input type="checkbox"  class="toggleMenu">
+        <div class="navFlex">
+          <div class="navInfo" v-if="hamburgerState">Close Navigation ></div>
+        <div class="navInfo" v-if="!hamburgerState">Open Navigation ></div>
+        
+        <nav class="mainNav">      
+            <input type="checkbox" class="toggleMenu" @click="showNavToggle">
             <div class="hamburger"></div>
             <ul class="menu">
                 <li v-for="mainNavItem in mainNavItems">
@@ -33,6 +44,7 @@ data() {
                 </li>
             </ul>
         </nav>
+      </div>
     </header>
 
 </template>
@@ -45,13 +57,18 @@ data() {
     justify-content:space-between;
     align-items: center;
     background-color: v-bind(houseColor);
-    padding: 0 25px;
+    padding: 0px 25px 0px 0px;
     transition: 0.3s;
     box-shadow: 0px 10px 15px 10px v-bind(houseColor);
+}
+.navInfo {
+  display: none;
+  
 }
 
 .logoContainer a {
     display: block;
+  
 }
   
   .logoContainer a img{
@@ -174,6 +191,16 @@ data() {
   }
 
   @media screen and (max-width: 992px){
+    .navInfo {
+  display: block;
+  color: white; 
+  padding-right: 20px;
+  
+}
+.navFlex {
+  display: flex;
+  justify-content: space-between;
+}
 
     .hamburger, 
     .toggleMenu {
@@ -181,15 +208,15 @@ data() {
     }
     
     .menu {
-      justify-content: start;
+      justify-content: left;
       flex-direction: column;
       align-items: center;
       position: fixed;
       top: 0;
       right: -300px;
       background-color: v-bind(houseColor);
-      width: 300px;
-      padding-top: 0px;
+      width: 200px;
+      margin-top: 100px;
     }
     .mainNav input:checked ~ .menu li {
       box-shadow: -15px 5px 10px 20px v-bind(houseColor);
@@ -206,11 +233,17 @@ data() {
 
     .menu li a,
     .menu li a:hover {
-      padding: 24px;
-      font-size: 24px;
+      padding: 28px;
+      font-size: 20px;
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
       text-underline-offset: 5px;
     }
+  }
+
+  @media screen and (max-width: 600px){
+.navInfo {
+  font-size: 14px;
+}
   }
 </style>
 
