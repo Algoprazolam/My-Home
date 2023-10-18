@@ -8,7 +8,8 @@ data() {
                 {text: 'Vue item 3'},
                 {text: 'Vue item 4'},
                 {text: 'Vue item 5'}
-            ]
+            ],
+            houseColor: '#90302c'
         }
         
     }
@@ -20,7 +21,7 @@ data() {
    <header class="header">
         <div class="logoContainer">
             <a href="#">
-                <img src="../assets/images/logo.webp" alt="image of a girl walking her dog">
+                <img src="../assets/images/logo.jpg" alt="image of a girl walking her dog">
             </a>
         </div>
         <nav class="mainNav">
@@ -43,10 +44,10 @@ data() {
     display: flex;
     justify-content:space-between;
     align-items: center;
-    background-color: #90302c;
+    background-color: v-bind(houseColor);
     padding: 0 25px;
     transition: 0.3s;
-    box-shadow: 0px 0px 5px 5px #90302c;
+    box-shadow: 0px 10px 15px 10px v-bind(houseColor);
 }
 
 .logoContainer a {
@@ -81,20 +82,22 @@ data() {
 
   .menu li a {
     color: #Fdd;
-    text-decoration: none;
+    text-decoration: underline solid 2px;
     display: block;
     padding: 40px 25px;
     font-size: 18px;
     line-height: 1;
+    text-underline-offset: 5px;
     transition: 0.3s;
   }
 
   .menu li a:hover {
-    box-shadow: 0 -5px 0px #fdd inset, 
-    500px 0 0 rgba(0, 0, 0, 0.2) inset;
-    border-radius: 10px;
-    padding: 35px 25px 45px 25px;
+    box-shadow: 500px 0 0 rgba(0, 0, 0, 0.2) inset;
+    text-underline-offset: 40px;
+    font-size: 20px;
+    transition: 0.3s;
   }
+
 
   .hamburger {
     position: relative;
@@ -115,16 +118,19 @@ data() {
     right: 0;
     background-color: white;
     border-radius: 10px;
+    transition: 0.3s;
   }
 
   .hamburger:before {
     top: -10px ;
     width: 20px;
+    transition: 0.3s;
   }
 
   .hamburger:after {
     top: 10px ;
     width: 25px;
+    transition: 0.3s;
   }
 
   .toggleMenu {
@@ -142,6 +148,7 @@ data() {
   
   .mainNav input:checked ~ .hamburger {
     background-color: transparent;
+    
 
   }
 
@@ -149,6 +156,7 @@ data() {
     top: 0;
     transform:  rotate(-45deg);
     width: 30px;
+    transition: 0.35s;
 
   }
 
@@ -156,11 +164,13 @@ data() {
     top: 0;
     transform:  rotate(45deg);
     width: 30px;
+    transition: 0.35s;
   }
 
   .mainNav input:checked ~ .menu {
     right: 0;
     box-shadow: -20px 0 40px rgba(0, 0, 0, 0.2);
+  
   }
 
   @media screen and (max-width: 992px){
@@ -177,22 +187,30 @@ data() {
       position: fixed;
       top: 0;
       right: -300px;
-      background-color: #90302c;
+      background-color: v-bind(houseColor);
       width: 300px;
-      height: 100%;
       padding-top: 0px;
     }
-
+    .mainNav input:checked ~ .menu li {
+      box-shadow: -15px 5px 10px 20px v-bind(houseColor);
+      transition: 0.35s;
+      
+      
+    }
     .menu li {
       width: 100%;
+      transition: 1s;
+      box-shadow: 0px 5px 0px 0px v-bind(houseColor);
+      
     }
 
     .menu li a,
     .menu li a:hover {
-      padding: 30px;
+      padding: 24px;
       font-size: 24px;
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
-      border-radius: 5px;
+      text-underline-offset: 5px;
     }
   }
 </style>
+
