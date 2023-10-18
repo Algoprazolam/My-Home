@@ -30,9 +30,9 @@ data() {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        align-items: stretch;
+        align-items: center;
         /* this only works when i change flex-wrap to a wrap */
-        align-content: stretch; 
+        align-content: center; 
     }
     .contentItem {
         margin: 10px;
@@ -42,16 +42,27 @@ data() {
         border-radius: 20px;
         background-color: white;
         color: black;
-        width: 20%;
-        min-width: 300px;
-        min-height: 300px;
+        height: 300px;
+        width: 300px;
         border: solid #FFDDDDDD 20px;
         flex-grow: 0;
-        flex-basis: 20%;
         text-align: center;
     }
     .contentItem img {
-        width: auto;
-        height: 200px;
+        width: 80%;
+        height: auto;
+    }
+
+    @media screen and (max-width: 992px){
+        .contentItem {
+            width: 240px;
+            height: 240px;
+        }
+    }
+    @media screen and (max-width: 600px){
+        .contentItem {
+            width: 160px;
+            height: 160px;
+        }
     }
 </style>
