@@ -17,7 +17,7 @@ data() {
     },
     methods: {
       showNavToggle() {
-        this.hamburgerState = !this.hamburgerState
+        this.hamburgerState = true
       }
     }
 }
@@ -32,7 +32,6 @@ data() {
             </a>
         </div>
         <div class="navFlex">
-          <div class="navInfo" v-if="hamburgerState">Close Navigation ></div>
         <div class="navInfo" v-if="!hamburgerState">Open Navigation ></div>
         
         <nav class="mainNav">      
@@ -51,7 +50,7 @@ data() {
 
 <style> 
 .header {
-    position: relative;
+    position: fixed;
     width: 100%;
     display: flex;
     justify-content:space-between;
@@ -60,6 +59,7 @@ data() {
     padding: 0px 25px 0px 0px;
     transition: 0.3s;
     box-shadow: 0px 10px 15px 10px v-bind(houseColor);
+    z-index: 1;
 }
 .navInfo {
   display: none;
@@ -89,7 +89,7 @@ data() {
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     transition: 0.5s;
   }
   
@@ -123,7 +123,7 @@ data() {
     background-color: white;
     border-radius: 10px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
     transition: 0.3s;
   }
 
@@ -154,7 +154,7 @@ data() {
     position: absolute;
     width: 30px;
     height: 100%;
-    z-index: 3;
+    z-index: 4;
     cursor: pointer;
     opacity: 0;
   }

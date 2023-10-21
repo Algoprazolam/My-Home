@@ -1,5 +1,5 @@
 <script setup>
-import mainNav from './components/mainNav.vue';
+import mainNav from './components/mainNav_rework.vue';
 import contentSystem from './components/contentSystem.vue';
 </script>
 

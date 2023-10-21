@@ -10,6 +10,7 @@ data() {
 </script>
 
 <template>
+    <section class="sectionOne">
     <div class="contentContainer">
         <div class="contentItem item1"><a href="https://www.instagram.com/she.just.she/" target="_blank"><img src="../assets/images/instagram.png" alt="instagram logo"></a></div>
         <div class="contentItem item2"><a href="https://github.com/Algoprazolam/" target="_blank"><img src="../assets/images/github.svg" alt="github logo"></a></div>
@@ -19,20 +20,28 @@ data() {
         <div class="contentItem item6"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, eius? </p></div>
         <div class="contentItem item7"><p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, eius? </p></div>
     </div>
+</section>
 </template>
 
 <style>
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties */
+.sectionOne {
+    width: 100%;
+    background-color: black;
+}
     .contentContainer {
+        padding-top: 140px;
         display: flex;
+        background-color: v-bind(houseColor);
         position: relative;
-        top: 40px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
         /* this only works when i change flex-wrap to a wrap */
         align-content: center; 
+        max-width: 1600px;
+        margin: auto;
     }
     .contentItem {
         margin: 10px;
