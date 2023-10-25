@@ -27,6 +27,7 @@ data() {
             </div>
 
             <nav class="mainNav">
+                <div class="hamburger"></div>
                 <ul class="menu">
                     <li v-for="mainNavItem in mainNavItems">
                         <a href='#'>{{ mainNavItem.text }}</a>
@@ -97,10 +98,43 @@ header {
     transition: 0.2s;
    
   }
-
   .menu li a:hover {
     box-shadow:  500px 0 rgba(0, 0, 0, 0.2) inset;
     transition: 0.2s;
+  }
+  .hamburger {
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 3;
+    transition: 0.3s;
+  }
+
+  .hamburger:before,
+  .hamburger:after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    right: 0;
+    background-color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .hamburger:before {
+    top: -10px ;
+    width: 1.5rem;
+    transition: 0.3s;
+  }
+
+  .hamburger:after {
+    top: 10px ;
+    width: 25px;
+    transition: 0.3s;
   }
   @media screen and (max-width: 1600px){
     .headerContent {
@@ -112,6 +146,10 @@ header {
     }
   }
   @media screen and (max-width: 992px){
+    .hamburger {
+        display: block;
+        margin-right: 20px;
+    }
     .headerContent {
         width: 100%;
     }
