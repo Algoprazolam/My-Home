@@ -202,10 +202,7 @@ data() {
   justify-content: space-between;
 }
 
-    .hamburger, 
-    .toggleMenu {
-      display: block;
-    }
+
     
     .menu {
       justify-content: left;
@@ -218,12 +215,7 @@ data() {
       width: 200px;
       margin-top: 100px;
     }
-    .mainNav input:checked ~ .menu li {
-      box-shadow: -15px 5px 10px 20px v-bind(houseColor);
-      transition: 0.35s;
-      
-      
-    }
+
     .menu li {
       width: 100%;
       transition: 1s;
@@ -237,6 +229,17 @@ data() {
       font-size: 20px;
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
       text-underline-offset: 5px;
+    }
+    /* exclude from rework*/
+    .mainNav input:checked ~ .menu li {
+      box-shadow: -15px 5px 10px 20px v-bind(houseColor);
+      transition: 0.35s;
+      
+      
+    }
+    .hamburger, 
+    .toggleMenu {
+      display: block;
     }
   }
 
