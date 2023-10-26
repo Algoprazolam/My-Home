@@ -19,7 +19,7 @@ import contentSystem from './components/contentSystem.vue';
 .landingSection {
   width: 100vw;
   height: 100vh;
-  background-color: red;
+  background-image: url(assets/images/hatched.jpg);
 }
 
 .sectionTwo {
