@@ -10,11 +10,21 @@ data() {
                 {text: ' 4'},
                 {text: 'diff lengths 5'}
             ],
-            houseColor: '#90302c'
+            houseColor: '#90302c',
+            navState: 'none',
+            hamburgerState: 'block'
         }
         
+    },
+    methods: {
+      showNavToggle() {
+        this.navState = 'block',
+        this.hamburgerState = 'none'
+      }
     }
 };
+
+
 
 window.onscroll = function() {scrollFunction()};
 
@@ -43,7 +53,7 @@ function scrollFunction() {
             </div>
 
             <nav class="mainNav">
-                <div class="hamburger"></div>
+                <div class="hamburger" @click="showNavToggle"></div>
                 <ul class="menu">
                     <li v-for="mainNavItem in mainNavItems">
                         <a href='#'>{{ mainNavItem.text }}</a>
@@ -176,7 +186,7 @@ header {
   }
   @media screen and (max-width: 992px){
     .hamburger {
-        display: block;
+        display: v-bind(hamburgerState);
         margin-right: 30px;
         margin-left: 2rem;
     }
@@ -203,12 +213,14 @@ header {
       justify-content: left;
       flex-direction: column;
       align-items: center;
-      position: fixed;
+      position: absolute;
+      left: 0;
       top: 0;
-      right: 0px;
       background-color: v-bind(houseColor);
-      width: 200px;
-      margin-top: 5rem;
+      width: 100vw;
+      height: 100vh;
+      padding-top: 5rem;
+      display: v-bind(navState);
     }
 
     .menu li {
