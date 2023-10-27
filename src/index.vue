@@ -7,7 +7,7 @@ import contentSystem from './components/contentSystem.vue';
   <main class="main">
     <section class="landingSection">
       <mainNav/>
-
+      <contentSystem/>
     </section>
     <section class="sectionTwo">
 
@@ -25,6 +25,6 @@ import contentSystem from './components/contentSystem.vue';
 .sectionTwo {
   width: 100vw;
   height: 100vh;
-  background-color: green;
+  background-color: black;
 }
 </style>

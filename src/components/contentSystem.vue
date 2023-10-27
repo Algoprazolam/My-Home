@@ -25,9 +25,8 @@ data() {
 
 <style scoped>
     .contentContainer {
-        padding-top: 140px;
+        padding-top: 5.5rem;
         display: flex;
-        background-color: v-bind(houseColor);
         position: relative;
         flex-direction: row;
         flex-wrap: wrap;
