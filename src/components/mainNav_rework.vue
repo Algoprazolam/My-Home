@@ -85,8 +85,8 @@ header {
 }
 .logoShrink {
   transition: 0.3s;  
-  padding-top: 0.4rem;
-  padding-bottom: 1.2rem;
+  padding-top: 0.6rem;
+  padding-bottom: 1rem;
 }
 .logoContainer svg {
   width: auto;
@@ -191,7 +191,9 @@ header {
       min-width: 6rem;
       padding-bottom: 0.5rem;
     }
-
+.logoShrink {
+  padding-top: 15px; 
+}
     .menu {
       justify-content: left;
       flex-direction: column;
