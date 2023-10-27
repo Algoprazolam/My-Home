@@ -11,15 +11,16 @@ data() {
                 {text: 'diff lengths 5'}
             ],
             houseColor: '#90302c',
-            navState: 'none',
-            hamburgerState: 'block'
+            navState: '-100vw'
         }
         
     },
     methods: {
       showNavToggle() {
-        this.navState = 'block',
-        this.hamburgerState = 'none'
+        this.navState = '0'
+      },
+      hideNavToggle() {
+        this.navState = '-100vw'
       }
     }
 };
@@ -53,9 +54,18 @@ function scrollFunction() {
             </div>
 
             <nav class="mainNav">
-                <div class="hamburger" @click="showNavToggle"></div>
-                <ul class="menu">
-                    <li v-for="mainNavItem in mainNavItems">
+              <button class="mobileNavButton" @click="showNavToggle">
+              <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.31 14.32"><title>Open navigation</title><path d="M1.28,2.84H16.74a.94.94,0,0,1,.93,1v.72a.94.94,0,0,1-.93,1H1.28a1,1,0,0,1-.94-1V3.81A1,1,0,0,1,1.28,2.84Z" transform="translate(-0.34 -2.84)"/><path d="M1.39,14.5H18.61a1,1,0,0,1,1.05,1v.72a1,1,0,0,1-1.05,1H1.39a1,1,0,0,1-1-1v-.72A1,1,0,0,1,1.39,14.5Z" transform="translate(-0.34 -2.84)"/><path d="M1.23,8.66H12.36a.93.93,0,0,1,.88,1v.71a.93.93,0,0,1-.88,1H1.23a.94.94,0,0,1-.89-1V9.64A.94.94,0,0,1,1.23,8.66Z" transform="translate(-0.34 -2.84)"/></svg>
+            </button>  
+              <ul class="menu">
+                
+                <li>
+                  <button class="exit" @click="hideNavToggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.9 13.89"><title>exit</title><path d="M2.43.51l11.1,11.11c.5.53.58,1.23.19,1.57h0l-.5.5c-.32.4-1,.34-1.56-.15l0,0L.51,2.43C0,1.89-.07,1.18.32.84h0L.85.32C1.19-.07,1.9,0,2.43.51Z" transform="translate(-0.07 -0.07)"/><path d="M13.52,2.43,2.42,13.53c-.53.5-1.23.58-1.57.19l0,0-.5-.5c-.4-.32-.33-1,.15-1.56l0,0L11.61.51c.53-.5,1.24-.58,1.58-.19h0l.52.52C14.11,1.19,14,1.89,13.52,2.43Z" transform="translate(-0.07 -0.07)"/></svg>
+                  </button>
+                  </li>
+               
+                <li v-for="mainNavItem in mainNavItems">
                         <a href='#'>{{ mainNavItem.text }}</a>
                     </li>
                 </ul>
@@ -66,6 +76,10 @@ function scrollFunction() {
 
 
 <style scoped>
+.mobileNavButton, .exit {
+  background-color: transparent;
+  border: none;
+}
 header {
     position: fixed;
     width: 100%;
@@ -112,6 +126,9 @@ header {
     display: flex;
     align-items: center;
   }
+  .hamburger {
+    display: none;
+  }
 
   .menu {
     font-weight: bold;
@@ -145,40 +162,7 @@ header {
     box-shadow:  500px 0 rgba(0, 0, 0, 0.2) inset;
     transition: 0.2s;
   }
-  .hamburger {
-    display: none;
-    position: relative;
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    z-index: 3;
-    transition: 0.3s;
-  }
-
-  .hamburger:before,
-  .hamburger:after {
-    content: '';
-    position: absolute;
-    height: 4px;
-    right: 0;
-    background-color: white;
-    border-radius: 10px;
-    transition: 0.3s;
-  }
-
-  .hamburger:before {
-    top: -10px ;
-    width: 20px;
-    transition: 0.3s;
-  }
-
-  .hamburger:after {
-    top: 10px ;
-    width: 25px;
-    transition: 0.3s;
-  }
+ 
   @media screen and (max-width: 1600px){
     .headerContent {
         width: 1024px;
@@ -186,9 +170,22 @@ header {
   }
   @media screen and (max-width: 992px){
     .hamburger {
-        display: v-bind(hamburgerState);
+      cursor: pointer;
+      display: block;
+        width: 2.5rem;
+        fill: white;
+        height: auto;
         margin-right: 30px;
-        margin-left: 2rem;
+    }
+    .exit {
+      cursor: pointer;
+      display: block;
+      width: 2.5rem;
+      fill: white;
+      height: auto;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
     }
     .headerContent {
       width: 100%;
@@ -214,13 +211,14 @@ header {
       flex-direction: column;
       align-items: center;
       position: absolute;
-      left: 0;
+      left: v-bind(navState);
       top: 0;
       background-color: v-bind(houseColor);
       width: 100vw;
       height: 100vh;
       padding-top: 5rem;
-      display: v-bind(navState);
+      display: block;
+      transition: 0.15s ease-in;
     }
 
     .menu li {
