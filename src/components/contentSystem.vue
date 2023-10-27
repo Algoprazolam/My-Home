@@ -24,13 +24,6 @@ data() {
 </template>
 
 <style scoped>
-/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties */
-/* .sectionOne {
-    width: 100%;
-    background-image: url(../assets/images/background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
     .contentContainer {
         padding-top: 140px;
         display: flex;
