@@ -17,7 +17,7 @@ data() {
     },
     methods: {
       showNavToggle() {
-        this.hamburgerState = !this.hamburgerState
+        this.hamburgerState = true
       }
     }
 }
@@ -32,7 +32,6 @@ data() {
             </a>
         </div>
         <div class="navFlex">
-          <div class="navInfo" v-if="hamburgerState">Close Navigation ></div>
         <div class="navInfo" v-if="!hamburgerState">Open Navigation ></div>
         
         <nav class="mainNav">      
@@ -51,7 +50,7 @@ data() {
 
 <style> 
 .header {
-    position: relative;
+    position: fixed;
     width: 100%;
     display: flex;
     justify-content:space-between;
@@ -60,6 +59,7 @@ data() {
     padding: 0px 25px 0px 0px;
     transition: 0.3s;
     box-shadow: 0px 10px 15px 10px v-bind(houseColor);
+    z-index: 1;
 }
 .navInfo {
   display: none;
@@ -89,7 +89,7 @@ data() {
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     transition: 0.5s;
   }
   
@@ -123,7 +123,7 @@ data() {
     background-color: white;
     border-radius: 10px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
     transition: 0.3s;
   }
 
@@ -154,7 +154,7 @@ data() {
     position: absolute;
     width: 30px;
     height: 100%;
-    z-index: 3;
+    z-index: 4;
     cursor: pointer;
     opacity: 0;
   }
@@ -202,10 +202,7 @@ data() {
   justify-content: space-between;
 }
 
-    .hamburger, 
-    .toggleMenu {
-      display: block;
-    }
+
     
     .menu {
       justify-content: left;
@@ -218,12 +215,7 @@ data() {
       width: 200px;
       margin-top: 100px;
     }
-    .mainNav input:checked ~ .menu li {
-      box-shadow: -15px 5px 10px 20px v-bind(houseColor);
-      transition: 0.35s;
-      
-      
-    }
+
     .menu li {
       width: 100%;
       transition: 1s;
@@ -237,6 +229,17 @@ data() {
       font-size: 20px;
       box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
       text-underline-offset: 5px;
+    }
+    /* exclude from rework*/
+    .mainNav input:checked ~ .menu li {
+      box-shadow: -15px 5px 10px 20px v-bind(houseColor);
+      transition: 0.35s;
+      
+      
+    }
+    .hamburger, 
+    .toggleMenu {
+      display: block;
     }
   }
 
