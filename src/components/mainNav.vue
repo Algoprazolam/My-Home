@@ -27,9 +27,9 @@ data() {
 
 
 
-window.onscroll = function() {scrollFunction()};
+window.addEventListener('scroll', shrinkNav)
 
-function scrollFunction() {
+function shrinkNav() {
   if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
     document.getElementById('header').classList.add('headerColored');
     document.getElementById('logo').classList.add('logoShrink');
@@ -85,11 +85,11 @@ header {
     width: 100%;
     height: auto;
     z-index: 20;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 .headerColored {
   background-color: black;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 
@@ -108,7 +108,7 @@ header {
     display: block;
 }
 .logoShrink {
-  transition: 0.3s;  
+  transition: 0.4s;  
   padding-top: 0.6rem;
   padding-bottom: 1rem;
 }
@@ -117,7 +117,7 @@ header {
   height: 5rem;
   margin-top: 16px;
   fill: white;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 
@@ -192,7 +192,7 @@ header {
       align-items: center;
     }
     .logoShrink {
-  transition: 0.3s;  
+  transition: 0.4s;  
   padding-top: 0.6rem;
   padding-bottom: 1rem;
 }
@@ -204,7 +204,7 @@ header {
   margin-top: 16px;
   margin-left: 15px;
   fill: white;
-  transition: 0.3s;
+  transition: 0.4s;
 }
     .menu {
       justify-content: left;
