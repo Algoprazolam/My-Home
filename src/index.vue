@@ -9,15 +9,6 @@ import mainNav from './components/mainNav.vue';
 </script>
 
 <script>
-export default {
-  methods: {
-    goto(refName) {
-        var element = this.$refs[refName];
-        var top = element.offsetTop;
-        window.scrollTo(0, top);
-    }
-  }
-}
 
 window.addEventListener('scroll', hideLogo)
 
@@ -59,12 +50,12 @@ function hideLogo() {
       </article>
       <article class="arrowDown">
        
-        <button @click="goto('sectionTwo')" class="arrowDownButton">
+        <a href="#sectionTwo" v-smooth-scroll><button class="arrowDownButton">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238.97 148.8"><title>Click to scroll to main content</title><path d="M124.28,155.38c-7.32.38-13.26-2.36-18.37-7.49Q59.17,101,12.35,54.27C2,43.86,2.06,30.66,12.34,20.21c2.1-2.14,4.21-4.27,6.37-6.35,9.9-9.59,23.16-9.73,33,0Q83.44,45.34,115,77.05c9.36,9.37,9.32,9.37,18.71,0q30.53-30.57,61.1-61.09c12.55-12.52,24.23-12,37.42,0,15.69,14.19,14.57,28.75.28,42.53C202.14,87.65,172.7,117.79,143,147.63,137.73,152.88,131.73,155.81,124.28,155.38Z" transform="translate(-4.6 -6.62)"/></svg>
-      </button>
+      </button> </a>
       </article>
     </section>
-    <section class="sectionTwo" ref="sectionTwo">
+    <section id="sectionTwo" class="sectionTwo">
       <!-- <contentSystem/> -->
 </section>
   </main>
