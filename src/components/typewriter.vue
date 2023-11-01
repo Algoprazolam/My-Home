@@ -47,6 +47,8 @@
 
 #wikipediaArticle {
     color: white;
+    word-wrap: break-word;
+    min-width: 480px;
 }
 .bold {
     font-weight: bold;
