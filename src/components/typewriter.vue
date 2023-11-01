@@ -46,15 +46,19 @@
 <style scoped>
 
 #wikipediaArticle {
+    max-width: 1024px;
     color: white;
     word-wrap: break-word;
     min-width: 480px;
+    padding: 5px 10px;
 }
 .bold {
     font-weight: bold;
     font-size: calc(1.2rem + 5px);
 }
 #wikipediaBox {
+    padding: 5px;
+    margin-left: 10px;
     float: right;
     border: 1px solid white;
     width: 271px;
@@ -64,12 +68,9 @@
 #wikipediaBox img {
     width: 100%;
 }
-hr {
-    margin-right: 16px;
-}
 h1 {
     padding-top: 40px;
-    font-size: calc(2rem + 0.5vw);
+    font-size: 3.5rem;
     font-weight: bold;
 }
 h1 + hr {
@@ -81,14 +82,9 @@ h2 {
     font-weight: lighter;
 }
     p {
-        margin-top: 10px;
-        margin-bottom: 10px;
+        text-align: justify;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
         font-size: 1.2rem;
-    }
-    @media screen and (max-width: 992px){
-        section {
-            padding-left: 5px;
-            padding-right: 5px;
-        }
     }
 </style>
