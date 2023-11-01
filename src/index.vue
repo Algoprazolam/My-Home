@@ -55,7 +55,7 @@ function hideLogo() {
       </article>
     </section>
     <section id="sectionTwo" class="sectionTwo">
-      <article>
+      <article id="wikipedia">
         <typewriter/>
       </article>
       

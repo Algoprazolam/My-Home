@@ -3,19 +3,26 @@
 </script>
 
 <template>
-    <section>
+    
+        
+    <article id="wikipediaArticle">
+       
+        
+    <h1>Algoprazolam</h1>
+    
+    <hr>
+    
+    <p>
+    **Algoprazolam** (/ˈ<u>alɡəʊpræzəlæm</u>/), that's just me.
+    
+    </p>
     <article id="wikipediaBox">
         <img src="../assets/images/algoMini.jpg" alt="">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, cumque!</p>
     </article>
-    <h1>Algoprazolam</h1>
-    <hr>
-    <p>
-    **Algoprazolam** (/ˈ<u>alɡəʊpræzəlæm</u>/), that's just me.
-    
     <h2>Algos</h2>
     <hr>
-</p>
+
 <p>
     **Algos** in Greek is a neuter noun literally meaning "pain". The name is related to the word suffix '-algia' denoting a painful condition.<sup>[3]</sup> 
 </p>
@@ -32,20 +39,19 @@
     within the <u>triazolobenzodiazepine</u> group of chemicals called <u>benzodiazepines</u>.<sup>[7]</sup> Alprazolam is most commonly used in management of 
     <u>anxiety disorders</u>, specifically <u>panic disorder</u> or <u>generalized anxiety disorder</u> (GAD).<sup>[3]</sup>
 </p>
-</section>
+</article>
 </template>
 
 <style scoped>
+
 #wikipediaBox {
-    margin-top: 16px;
-    margin-right: 16px;
-    margin-left: 10px;
+    float: right;
     border: 1px solid white;
     width: 40%;
-    max-width: 400px;
-    height: 400px;
-    float: right;
+    height: auto;
+    max-width: 250px;
 }
+
 #wikipediaBox img {
     width: 100%;
 }
@@ -56,7 +62,7 @@ h1, h2, p{
     color: white;
 }
 h1 {
-    font-size: 2.5rem;
+    font-size: calc(2rem + 0.5vw);
     font-weight: bold;
 }
 h1 + hr {
@@ -76,9 +82,5 @@ h2 {
             padding-left: 5px;
             padding-right: 5px;
         }
-        p{
-        margin-left: 16px;
-        margin-right: 16px;
-    }
     }
 </style>
