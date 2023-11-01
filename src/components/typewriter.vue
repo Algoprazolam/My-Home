@@ -12,7 +12,7 @@
     
     <hr>
     
-    <article id="wikipediaBox">
+    <article id="wikipediaBox" class="breakpoint480plus">
         <img src="../assets/images/algoMini.jpg" alt="">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, cumque!</p>
     </article>
@@ -20,7 +20,10 @@
         <span class="bold">Algoprazolam</span> (/ˈ<u>alɡəʊpræzəlæm</u>/), that's just me.
     
     </p>
-    
+    <article id="wikipediaBox" class="breakpoint480">
+        <img src="../assets/images/algoMini.jpg" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, cumque!</p>
+    </article>
     <h2>Algos</h2>
     <hr>
 
@@ -45,11 +48,14 @@
 
 <style scoped>
 
+.breakpoint480 {
+    display: none;
+}
+
 #wikipediaArticle {
     max-width: 1024px;
     color: white;
     word-wrap: break-word;
-    min-width: 480px;
     padding: 5px 10px;
 }
 .bold {
@@ -86,5 +92,17 @@ h2 {
         padding-top: 1rem;
         padding-bottom: 2rem;
         font-size: 1.2rem;
+    }
+    @media screen and (max-width: 480px){
+        .breakpoint480 {
+            display: block;
+        }
+        #wikipediaBox {
+            float: none;
+            margin: auto;
+        }
+        .breakpoint480plus {
+            display: none;
+        }
     }
 </style>
