@@ -1,7 +1,7 @@
 <script setup>
 
 import mainNav from './components/mainNav.vue';
-// import contentSystem from './components/contentSystem.vue';
+import typewriter from './components/typewriter.vue';
 
 
 
@@ -55,7 +55,10 @@ function hideLogo() {
       </article>
     </section>
     <section id="sectionTwo" class="sectionTwo">
-      <!-- <contentSystem/> -->
+      <article>
+        <typewriter/>
+      </article>
+      
 </section>
   </main>
 </template>
@@ -159,8 +162,8 @@ article {
 
 
 .sectionTwo {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
   background-color: black;
 }
 @media screen and (max-width: 1600px){
