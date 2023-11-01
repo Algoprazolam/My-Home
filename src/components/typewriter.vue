@@ -93,7 +93,7 @@ h2 {
         padding-bottom: 2rem;
         font-size: 1.2rem;
     }
-    @media screen and (max-width: 992px){
+    @media screen and (max-width: 480px){
         .breakpoint480 {
             display: block;
         }
