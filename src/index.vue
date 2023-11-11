@@ -122,6 +122,8 @@ function hideLogo() {
   opacity: v-bind(gitState2);
   transition: 0.3s;
   flex-direction: column;
+  border: solid 2px white;
+  border-radius: 16px;
 }
 
 
