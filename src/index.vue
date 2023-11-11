@@ -12,16 +12,19 @@ import typewriter from './components/typewriter.vue';
 export default {
   data() {
         return {
-          gitState: '0'
+          gitState: 'hidden',
+          gitState2: '0'
         }
       },
   methods: {
       gitExpandEvent() {
-        if (this.gitState == '0') {
-        this.gitState = '1'
+        if (this.gitState == 'hidden') {
+        this.gitState = 'visible'
+        this.gitState2 = '1'
         }
         else {
-          this.gitState = '0'
+          this.gitState = 'hidden'
+          this.gitState2 = '0'
         }
       }
     }
@@ -115,7 +118,8 @@ function hideLogo() {
   position: absolute;
   display: flex;
   grid-row-start: 4;
-  opacity: v-bind(gitState);
+  visibility: v-bind(gitState);
+  opacity: v-bind(gitState2);
   transition: 0.3s;
   flex-direction: column;
 }
@@ -178,6 +182,7 @@ article {
   margin-top: 16px;
   margin-left: 16px;
   margin-right: 16px;
+  cursor: pointer;
 }
 #social svg{
   max-width: 3rem;
