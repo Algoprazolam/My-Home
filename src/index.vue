@@ -113,19 +113,11 @@ function hideLogo() {
 #gitExpand {
   z-index: 10;
   position: absolute;
-  margin-top: 32px;
+  display: flex;
   grid-row-start: 4;
   opacity: v-bind(gitState);
   transition: 0.3s;
-}
-#github, #gitlab {
-  position: absolute;
-  display: block;
-  top: -0.8rem;
-}
-#github {
- 
-  right: 1.6rem;
+  flex-direction: column;
 }
 
 
@@ -198,13 +190,9 @@ article {
 
 #social a:hover, #git:hover {
   margin-top: 0px;
+  margin-bottom: 16px;
 }
-#git:hover ~ #gitExpand svg {
-  margin-top: 16px;
-}
-#gitExpand svg:hover {
-  top: calc(-0.8rem - 16px);
-}
+
 
 .arrowDown {
   width: 100%;
@@ -245,8 +233,13 @@ article {
   margin: auto;
 }
   }
-  /* @media screen and (max-width: 992px){
-  } */
+   @media screen and (max-width: 780px){
+    #social a, #git{
+ 
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
+  } 
 </style>
 
