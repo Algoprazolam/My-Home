@@ -243,7 +243,7 @@ article {
   }
    @media screen and (max-width: 780px){
     #social {
-
+      width: 50%;
   justify-content: space-around;
   
   
@@ -256,5 +256,26 @@ article {
 }
 
   } 
+  @media screen and (max-height: 680px){
+ 
+.arrowDownButton {
+  animation-duration: 2.5s;
+  width: 4rem;
+}
+
+  @keyframes arrowBounce {
+  0%   {padding-top: 0rem;}
+  50%  {padding-top: 16px;}
+
+    
+
+   }
+  }
+  @media screen and (max-height: 450px){
+    .arrowDownButton {
+      animation-name: none;
+    }
+    
+  }
 </style>
 
