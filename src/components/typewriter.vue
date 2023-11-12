@@ -54,6 +54,7 @@
 
 #wikipediaArticle {
     max-width: 1024px;
+    min-width: 290px;
     color: white;
     word-wrap: break-word;
     padding: 5px 10px;

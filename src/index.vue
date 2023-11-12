@@ -113,19 +113,6 @@ function hideLogo() {
 
 
 <style>
-#gitExpand {
-  z-index: 10;
-  position: absolute;
-  display: flex;
-  grid-row-start: 4;
-  visibility: v-bind(gitState);
-  opacity: v-bind(gitState2);
-  transition: 0.3s;
-  flex-direction: column;
-  border: solid 2px white;
-  border-radius: 16px;
-}
-
 
 .logoContainer svg{
   opacity: 0;
@@ -144,6 +131,7 @@ function hideLogo() {
     "."
     "."; 
   width: 100vw;
+  min-width: 290px;
   height: 80vh;
   background-image: url(assets/images/hatched.jpg);
   background-position: center;
@@ -175,18 +163,17 @@ article {
   display: flex;
   justify-content: center;
   min-height: 3rem;
-  width: 100%;
+  width: 80%;
   height: 100%;
   grid-row-start: 3;
 }
 #social a, #git{
-  display: inline-block;
-  margin-top: 16px;
+  display: block;
   margin-left: 16px;
   margin-right: 16px;
   cursor: pointer;
 }
-#social svg{
+#social svg, #git{
   max-width: 3rem;
   height: auto;
   fill: white;
@@ -198,6 +185,19 @@ article {
 #social a:hover, #git:hover {
   margin-top: 0px;
   margin-bottom: 16px;
+}
+
+#gitExpand {
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  grid-row-start: 4;
+  visibility: v-bind(gitState);
+  opacity: v-bind(gitState2);
+  transition: 0.3s;
+  flex-direction: column;
+  border: solid 2px white;
+  border-radius: 16px;
 }
 
 
@@ -230,6 +230,7 @@ article {
 
 .sectionTwo {
   width: 100%;
+  min-width: 290px;
   height: auto;
   background-color: black;
 }
@@ -241,10 +242,17 @@ article {
 }
   }
    @media screen and (max-width: 780px){
-    #social a, #git{
+    #social {
+
+  justify-content: space-around;
+  
+  
  
-  margin-left: 10px;
-  margin-right: 10px;
+}
+#social a, #git{
+  margin-left: 0px;
+  margin-right: 0px;
+ 
 }
 
   } 
