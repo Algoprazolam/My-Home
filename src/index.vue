@@ -160,6 +160,7 @@ article {
   width: 80%;
 }
 #social {
+  margin-top: 16px;
   display: flex;
   justify-content: center;
   min-height: 3rem;
@@ -181,13 +182,18 @@ article {
   stroke-width: 3%;
 }
 
+#github {
+  margin-bottom: 16px;
+}
 
 #social a:hover, #git:hover {
-  margin-top: 0px;
+  margin-top: -16px;
   margin-bottom: 16px;
 }
 
 #gitExpand {
+  padding-top: 18px;
+  padding-bottom: 16px;
   z-index: 10;
   position: absolute;
   display: flex;
@@ -241,21 +247,21 @@ article {
   margin: auto;
 }
   }
-   @media screen and (max-width: 780px){
+   @media screen and (max-width: 500px){
     #social {
       width: 50%;
   justify-content: space-around;
-  
-  
+    }
+  #social a, #git{
+  margin-left: 3px;
+  margin-right: 3px;
  
 }
-#social a, #git{
-  margin-left: 0px;
-  margin-right: 0px;
  
 }
 
-  } 
+
+
   @media screen and (max-height: 680px){
  
 .arrowDownButton {
